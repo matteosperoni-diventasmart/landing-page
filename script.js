@@ -32,28 +32,35 @@ function loadAnalytics() {
   document.head.appendChild(s);
 }
 
-var banner = document.getElementById("cookieBanner");
+var CONSENT_DEFAULT = "accepted";
+var banner = null;
 var saved = null;
 try { saved = localStorage.getItem(CONSENT_KEY); } catch (e) { /* storage non disponibile */ }
 
-if (saved === "accepted") {
-  loadAnalytics();
-} else if (saved !== "declined" && banner) {
-  banner.classList.add("show");
+if (saved === CONSENT_DEFAULT || saved === "declined") {
+  if (saved === CONSENT_DEFAULT) loadAnalytics();
+} else {
+  banner = document.createElement("div");
+  banner.id = "cookieBanner";
+  banner.className = "cookie-banner show";
+  banner.setAttribute("role", "dialog");
+  banner.setAttribute("aria-live", "polite");
+  banner.setAttribute("aria-label", "Consenso cookie");
+  banner.innerHTML = '<p class="cb-text">Questo sito utilizza Google Analytics, uno strumento di statistiche che impiega cookie. Ti chiediamo il consenso prima di attivarli. Puoi leggere la nostra <a href="cookie.html">Cookie Policy</a> e la <a href="privacy.html">Privacy Policy</a>.</p><div class="cb-actions"><button class="btn" id="cookieAccept" type="button">Accetta</button><button class="btn-ghost" id="cookieDecline" type="button">Rifiuta</button></div>';
+  document.body.appendChild(banner);
+  document.getElementById("cookieAccept").addEventListener("click", function () {
+    storeConsent(CONSENT_DEFAULT);
+    loadAnalytics();
+  });
+  document.getElementById("cookieDecline").addEventListener("click", function () {
+    storeConsent("declined");
+  });
 }
 
 function storeConsent(value) {
   try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { /* ignora */ }
   if (banner) banner.classList.remove("show");
 }
-
-document.getElementById("cookieAccept").addEventListener("click", function () {
-  storeConsent("accepted");
-  loadAnalytics();
-});
-document.getElementById("cookieDecline").addEventListener("click", function () {
-  storeConsent("declined");
-});
 
 /* Anno dinamico nel footer */
 var y = document.getElementById("year");
