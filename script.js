@@ -1,5 +1,5 @@
 /* ================================================================
-   DiventaSmart — script.js
+   DiventaSmart - script.js
    Banner consenso cookie + caricamento condizionale Google Analytics
    ================================================================ */
 
