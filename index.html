@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>DiventaSmart</title>
+  <meta name="description" content="DiventaSmart rende smart gli spazi. Contatti: info@diventasmart.it">
+  <meta name="keywords" content="DiventaSmart, spazi smart, smart home, domotica, Italia">
+  <meta name="author" content="DiventaSmart">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://diventasmart.it/">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="DiventaSmart">
+  <meta property="og:title" content="DiventaSmart">
+  <meta property="og:description" content="DiventaSmart rende smart gli spazi. Contatti: info@diventasmart.it">
+  <meta property="og:url" content="https://diventasmart.it/">
+  <meta property="og:image" content="https://diventasmart.it/assets/all.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Geo: copertura del servizio (nessuna sede fisica) -->
+  <meta name="geo.region" content="IT">
+  <meta name="geo.placename" content="Italia">
+  <meta name="ICBM" content="42.833333, 12.833333">
+
+  <link rel="preload" as="image" href="assets/all.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://diventasmart.it/#organization",
+    "name": "DiventaSmart",
+    "url": "https://diventasmart.it/",
+    "logo": "https://diventasmart.it/assets/all.png",
+    "email": "info@diventasmart.it",
+    "areaServed": "IT",
+    "knowsLanguage": ["it", "en"]
+  }
+  </script>
+</head>
+<body>
+
+  <main class="snap-root">
+    <!-- HERO -->
+    <header class="hero snap-section" id="top">
+      <h1 class="sr-only">DiventaSmart — rendiamo smart gli spazi</h1>
+      <img class="hero-logo" src="assets/all.png" alt="DiventaSmart" width="882" height="180">
+
+      <a class="scroll-cue" href="#contatti" aria-label="Scopri di più, scorri verso il basso">
+        <span>Scopri di più</span>
+        <svg class="arrow-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </header>
+
+    <!-- CONTATTI -->
+    <section class="section section-alt snap-section" id="contatti">
+      <div class="wrap">
+        <div class="contact-card">
+          <h2>Contattaci</h2>
+          <a class="btn" href="mailto:info@diventasmart.it">
+            <svg class="mail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 6l-10 7L2 6"/><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
+            info@diventasmart.it
+          </a>
+
+          <div class="divider"><span>oppure scrivici</span></div>
+
+          <form id="contactForm" action="mailto:info@diventasmart.it" method="post" enctype="text/plain">
+            <input type="text" name="nome" placeholder="Il tuo nome" required autocomplete="name">
+            <textarea name="messaggio" placeholder="Messaggio..." rows="3" required></textarea>
+            <button type="submit" class="btn btn-teal">
+              <svg class="mail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4L22 2z"/></svg>
+              Invia email
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER compatto -->
+  <footer class="site-footer" id="footer">
+    <p>
+      &copy; <span id="year">2026</span> DiventaSmart
+      <span class="sep">·</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="sep">·</span>
+      <a href="cookie.html">Cookie Policy</a>
+    </p>
+  </footer>
+
+  <!-- NAV PUNTINI -->
+  <nav class="scroll-dots" aria-label="Navigazione sezioni">
+    <button class="dot active" data-target="top" aria-label="Vai all'inizio"><span class="sr-only">Inizio</span></button>
+    <button class="dot" data-target="contatti" aria-label="Vai ai contatti"><span class="sr-only">Contatti</span></button>
+  </nav>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Consenso cookie">
+    <p class="cb-text">
+      Questo sito utilizza Google Analytics, uno strumento di statistiche che impiega cookie. Ti chiediamo il consenso prima di attivarli. Puoi leggere la nostra
+      <a href="cookie.html">Cookie Policy</a> e la <a href="privacy.html">Privacy Policy</a>.
+    </p>
+    <div class="cb-actions">
+      <button class="btn" id="cookieAccept" type="button">Accetta</button>
+      <button class="btn-ghost" id="cookieDecline" type="button">Rifiuta</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
